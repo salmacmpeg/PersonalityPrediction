@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle as pk
 from configs import model_settings_obj
+from loguru import logger
+
 
 data = preprocess_data()
 
@@ -13,7 +15,7 @@ def build_model():
     X_train, X_test, y_train, y_test = _split_data(X, y)
     model = _train_model(X_train, y_train)
     accuracy = _evaluate_model(model, X_test, y_test)
-    print(f"Built model with evaluation accuracy: {accuracy}")
+    logger.info(f"Built model with evaluation accuracy: {accuracy}")
     _save_model(model)
 
 
@@ -46,3 +48,4 @@ def _save_model(model):
                  f'{model_settings_obj.MODEL_NAME}'
     with open(model_path, 'wb') as model_file:
         pk.dump(model, model_file)
+        logger.info("Saved model successfully")

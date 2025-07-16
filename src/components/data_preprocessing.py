@@ -1,5 +1,6 @@
 from .data_loading import load_data
 import pandas as pd
+from loguru import logger
 
 
 data = load_data()
@@ -11,7 +12,7 @@ def preprocess_data() -> pd.DataFrame:
 
     mapped_data = _mapping(data_filled)
 
-    print("Done preprocessing data")
+    logger.info("Done preprocessing data")
 
     return mapped_data
 

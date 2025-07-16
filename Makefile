@@ -1,10 +1,10 @@
 .PHONY: install run_inference run_builder check clean runner_inference runner_builder
 .DEFAULT_GOAL:=runner_inference
-run_inference: install
+run_inference: 
 	poetry run python src/runner_inference.py
-run_builder: install
+run_builder: 
 	poetry run python src/runner_builder.py
-check:
+check:install
 	poetry run flake8
 clean: 
 	rm -rf `find . -type d -name  __pycache__`

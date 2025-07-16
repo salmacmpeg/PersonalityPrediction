@@ -2,6 +2,7 @@ from components.model_all import build_model
 from configs import model_settings_obj
 from pathlib import Path
 import pickle as pk
+from loguru import logger
 
 
 class model_loader_service():
@@ -16,9 +17,9 @@ class model_loader_service():
                           f'{model_settings_obj.MODEL_NAME}')
 
         if not model_path.exists():
-            print("model was not found, so we build it again")
+            logger.warning("model was not found, so we build it again")
             build_model()
 
         with open(model_path, 'rb') as model_file:
             self.model = pk.load(model_file)
-            print("Loaded model successfully")
+            logger.info("Loaded model successfully")

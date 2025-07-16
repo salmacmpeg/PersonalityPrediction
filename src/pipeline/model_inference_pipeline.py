@@ -1,6 +1,7 @@
 from configs import model_settings_obj
 from pathlib import Path
 import pickle as pk
+from loguru import logger
 
 
 class model_inference_service():
@@ -15,10 +16,13 @@ class model_inference_service():
                           f'{model_settings_obj.MODEL_NAME}')
 
         if not model_path.exists():
+            logger.warning("model was not found, "
+                           "please build it and run again")
             raise FileNotFoundError("no built model was not found,"
                                     "  please build it and run again")
 
         else:
             with open(model_path, 'rb') as model_file:
                 self.model = pk.load(model_file)
+                logger.info("Loaded model successfully")
                 return self.model.predict(features)
