@@ -1,7 +1,9 @@
 import pandas as pd
 from pipeline.model_inference_pipeline import model_inference_service
+from loguru import logger
 
 
+@logger.catch
 def main():
     mis = model_inference_service()
 
@@ -12,11 +14,11 @@ def main():
             'Drained_after_socializing': [1],
             'Friends_circle_size': [2],
             'Post_frequency': [1]}
-    print("testing data ", test)
+    logger.debug(f'testing data: {test}')
     pred = mis.predict(pd.DataFrame(test))
 
-    print('Predicted personality is ',
-          'Introverted' if pred == 1 else 'Extroverted')
+    logger.debug('Predicted personality is ' +
+                 f'is {"Introverted" if pred == 1 else "Extroverted"}')
 
 
 if __name__ == '__main__':

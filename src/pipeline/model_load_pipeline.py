@@ -22,4 +22,4 @@ class model_loader_service():
 
         with open(model_path, 'rb') as model_file:
             self.model = pk.load(model_file)
-            logger.info("Loaded model successfully")
+            logger.info("Loaded model successfully in model loader")
