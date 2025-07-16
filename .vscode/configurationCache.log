@@ -1,0 +1,1 @@
+{"buildTargets":[".PHONY","check","clean","install","run_builder","run_inference","runner_builder","runner_inference"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
