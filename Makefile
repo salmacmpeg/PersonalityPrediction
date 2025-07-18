@@ -13,4 +13,4 @@ runner_builder: check run_builder clean
 install: pyproject.toml
 	poetry install
 test:
-	poetry run pytest -v -s
+	poetry run pytest -v -s 
