@@ -8,10 +8,12 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 16 21:07:39 2025
+# Make data base, printed on Fri Jul 18 19:20:25 2025
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -37,7 +39,9 @@ CUDA_PATH_V11_2 = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_25456_DGOHTCFKFVQOUWAC
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5456_WPYUGPJRQAVXLWVH
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -87,7 +91,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 25456
+VSCODE_PID = 5456
 # environment
 CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2
 # automatic
@@ -211,7 +215,7 @@ VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=10/126=8%
+# Load=101/1024=10%, Rehash=0, Collisions=11/128=9%
 
 # Pattern-specific Variable Values
 
@@ -219,9 +223,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
 
 # Directories
 
-# . (key d:/applying/personalityprediction, mtime 1752689229): 8 files, no impossibilities.
+# . (key d:/applying/personalityprediction, mtime 1752695918): 15 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,7 +233,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
 
 # Files
 
-check:
+check: install
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -237,20 +241,19 @@ check:
 #  recipe to execute (from 'Makefile', line 8):
 	poetry run flake8
 
-run_inference: install
+run_inference:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 4):
-	poetry run python src/run 
-ner_inference.py
+	poetry run python src/runner_inference.py
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
 #  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-07-16 19:39:15
+#  Last modified 2025-07-16 22:20:47
 #  File has been updated.
 #  Successfully updated.
 
@@ -274,7 +277,7 @@ clean:
 #  recipe to execute (from 'Makefile', line 10):
 	rm -rf `find . -type d -name  __pycache__`
 
-run_builder: install
+run_builder:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -315,19 +318,19 @@ pyproject.toml:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/47=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 179 B / avg = 8 B
-# current buf: size = 8174 B / used = 179 B / count = 20 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 254 B / avg = 9 B
+# current buf: size = 8174 B / used = 254 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 47 / hit rate = 57%
+# strcache performance: lookups = 53 / hit rate = 50%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/47=0%
-# Finished Make data base on Wed Jul 16 21:07:39 2025
+# Load=26/8192=0%, Rehash=0, Collisions=0/53=0%
+# Finished Make data base on Fri Jul 18 19:20:25 2025
 
  

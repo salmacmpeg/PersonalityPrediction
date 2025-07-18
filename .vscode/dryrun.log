@@ -1,8 +1,8 @@
 make.exe --dry-run --always-make --keep-going --print-directory
 make: Entering directory 'd:/applying/personalityprediction'
+poetry install
 poetry run flake8
+poetry run python src/runner_inference.py
 rm -rf `find . -type d -name  __pycache__`
 make: Leaving directory 'd:/applying/personalityprediction'
  
-make: *** No rule to make target 'pyproject.toml', needed by 'install'.
-

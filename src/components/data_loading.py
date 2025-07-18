@@ -1,4 +1,4 @@
-from configs import db_settings_obj
+from src.configs import db_settings_obj
 import pandas as pd
 from loguru import logger
 

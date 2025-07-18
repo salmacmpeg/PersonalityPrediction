@@ -1,7 +1,6 @@
-from .data_loading import load_data
+from src.components.data_loading import load_data
 import pandas as pd
 from loguru import logger
-
 
 data = load_data()
 

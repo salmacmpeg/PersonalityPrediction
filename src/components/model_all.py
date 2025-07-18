@@ -1,9 +1,9 @@
-from .data_preprocessing import preprocess_data
+from src.components.data_preprocessing import preprocess_data
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle as pk
-from configs import model_settings_obj
+from src.configs import model_settings_obj
 from loguru import logger
 
 

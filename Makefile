@@ -1,4 +1,4 @@
-.PHONY: install run_inference run_builder check clean runner_inference runner_builder
+.PHONY: install run_inference run_builder check clean runner_inference runner_builder test
 .DEFAULT_GOAL:=runner_inference
 run_inference: 
 	poetry run python src/runner_inference.py
@@ -12,3 +12,5 @@ runner_inference: check run_inference clean
 runner_builder: check run_builder clean
 install: pyproject.toml
 	poetry install
+test:
+	poetry run pytest -v -s
