@@ -1,7 +1,12 @@
 from pathlib import Path
 from src.components.data_preprocessing import DataPreprocessing
 from src.components.model_all import (
-    build_model, _get_x_y, _split_data, _train_model, _evaluate_model)
+    build_model,
+    _get_x_y,
+    _split_data,
+    _train_model,
+    _evaluate_model,
+    _save_highest_model_score)
 from src.configs import model_settings_obj
 import pandas as pd
 import pytest
@@ -16,7 +21,7 @@ def loaded_data():
     return data
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def splitted_data():
     db_preprocessor = DataPreprocessing()
     data = db_preprocessor.preprocess_data()
@@ -62,9 +67,11 @@ def test_model_split_data_3(splitted_data):
 
 def test_model_split_data_leakage(splitted_data):
     x_train, x_test, y_train, y_test = splitted_data
-    x_train['Personality'] = y_train
-    x_test['Personality'] = y_test
-    concat_df = pd.concat([x_train, x_test], axis=0)
+    x_train_copy = x_train.copy()
+    x_test_copy = x_test.copy()
+    x_train_copy['Personality'] = y_train
+    x_test_copy['Personality'] = y_test
+    concat_df = pd.concat([x_train_copy, x_test_copy], axis=0)
     concat_df.drop_duplicates(inplace=True)
     assert concat_df.shape[0] == x_train.shape[0] + x_test.shape[0]
 
@@ -87,3 +94,58 @@ def test_model_saving():
     model_path = f'{model_settings_obj.MODELS_FOLDER}/' \
                  f'{model_settings_obj.MODEL_NAME}'
     assert Path(model_path).exists()
+
+
+def test_save_highest_model_score_0(tmp_path):
+    from src.configs import model_settings_obj
+    old_file_name = model_settings_obj.HIGH_SCORE_FILE_NAME
+    old_folder_name = model_settings_obj.MODELS_FOLDER
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = "test_score.txt"
+    model_settings_obj.MODELS_FOLDER = str(tmp_path)
+
+    # Import the function
+    _save_highest_model_score(0.9)
+    # Test when the file does not exist
+
+    with open(f'{tmp_path}/test_score.txt', 'r') as file:
+        assert float(file.readline()) == 0.9
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = old_file_name
+    model_settings_obj.MODELS_FOLDER = old_folder_name
+
+
+def test_save_highest_model_score_1(tmp_path):
+    from src.configs import model_settings_obj
+    old_file_name = model_settings_obj.HIGH_SCORE_FILE_NAME
+    old_folder_name = model_settings_obj.MODELS_FOLDER
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = "test_score.txt"
+    model_settings_obj.MODELS_FOLDER = str(tmp_path)
+
+    # Test when the file exists and the new score is lower
+    _save_highest_model_score(0.9)
+    _save_highest_model_score(0.8)
+    with open(f'{tmp_path}/test_score.txt', 'r') as file:
+        assert float(file.readline()) == 0.9
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = old_file_name
+    model_settings_obj.MODELS_FOLDER = old_folder_name
+
+
+def test_save_highest_model_score_2(tmp_path):
+    from src.configs import model_settings_obj
+    old_file_name = model_settings_obj.HIGH_SCORE_FILE_NAME
+    old_folder_name = model_settings_obj.MODELS_FOLDER
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = "test_score.txt"
+    model_settings_obj.MODELS_FOLDER = str(tmp_path)
+
+    # Test when the file exists and the new score is higher
+    _save_highest_model_score(0.7)
+    _save_highest_model_score(1.0)
+    with open(f'{tmp_path}/test_score.txt', 'r') as file:
+        assert float(file.readline()) == 1.0
+
+    model_settings_obj.HIGH_SCORE_FILE_NAME = old_file_name
+    model_settings_obj.MODELS_FOLDER = old_folder_name

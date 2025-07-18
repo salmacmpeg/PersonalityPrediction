@@ -1,3 +1,4 @@
+from pathlib import Path
 from src.components.data_preprocessing import DataPreprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
@@ -47,6 +48,7 @@ def _evaluate_model(model: DecisionTreeClassifier, X_test: pd.DataFrame,
     accuracy = model.score(X_test, y_test)
     logger.debug(f'Model {type(model).__name__} has been evaluated with ' +
                  f'test score: {accuracy}')
+    _save_highest_model_score(accuracy)
     return accuracy
 
 
@@ -56,3 +58,20 @@ def _save_model(model):
     with open(model_path, 'wb') as model_file:
         pk.dump(model, model_file)
         logger.info("Saved model successfully")
+
+
+def _save_highest_model_score(score: float):
+    file_path = f'{model_settings_obj.MODELS_FOLDER}/' \
+                 f'{model_settings_obj.HIGH_SCORE_FILE_NAME}'
+    logger.debug(f'inside save highest score, and the path is: {file_path} ')
+    if not Path(file_path).exists():
+        with open(file_path, mode='w') as file:
+            file.write(str(score))
+    else:
+        with open(file_path, mode='r+') as file:
+            old_score_str = file.readline()
+            old_score = float(old_score_str)
+            if score > old_score:
+                file.seek(0)
+                file.write(str(score))
+                file.truncate()

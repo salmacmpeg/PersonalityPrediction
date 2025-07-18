@@ -1,0 +1,36 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-8.4.1, pluggy-1.6.0 -- D:\applying\personalityprediction\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\applying\personalityprediction
+configfile: pytest.ini
+plugins: anyio-4.9.0
+collecting ... collected 26 items
+
+tests/test_pretrain/test_data_loading.py::test_data_loading_shape PASSED
+tests/test_pretrain/test_data_loading.py::test_data_loading_type PASSED
+tests/test_pretrain/test_data_preprocessing.py::test_DataPreprocessing_loaddata PASSED
+tests/test_pretrain/test_data_preprocessing.py::test_DataPreprocessing_fillna PASSED
+tests/test_pretrain/test_data_preprocessing.py::test_DataPreprocessing_mapping PASSED
+tests/test_pretrain/test_data_preprocessing.py::test_DataPreprocessing_final PASSED
+tests/test_pretrain/test_model_training.py::test_model_get_x_y_0 PASSED
+tests/test_pretrain/test_model_training.py::test_model_get_x_y_1 PASSED
+tests/test_pretrain/test_model_training.py::test_model_split_data_0 PASSED
+tests/test_pretrain/test_model_training.py::test_model_split_data_1 PASSED
+tests/test_pretrain/test_model_training.py::test_model_split_data_2 PASSED
+tests/test_pretrain/test_model_training.py::test_model_split_data_3 PASSED
+tests/test_pretrain/test_model_training.py::test_model_split_data_leakage PASSED
+tests/test_pretrain/test_model_training.py::test_model_training PASSED
+tests/test_pretrain/test_model_training.py::test_model_evaluation PASSED
+tests/test_pretrain/test_model_training.py::test_model_saving PASSED
+tests/test_pretrain/test_model_training.py::test_save_highest_model_score_0 PASSED
+tests/test_pretrain/test_model_training.py::test_save_highest_model_score_1 PASSED
+tests/test_pretrain/test_model_training.py::test_save_highest_model_score_2 PASSED
+tests/tests_posttrain/test_model_after_training.py::test_loading_service PASSED
+tests/tests_posttrain/test_model_after_training.py::test_loading_highest_score PASSED
+tests/tests_posttrain/test_model_after_training.py::test_inference_service_introvert PASSED
+tests/tests_posttrain/test_model_after_training.py::test_inference_service_extrovert PASSED
+tests/tests_posttrain/test_model_after_training.py::test_inference_service_invariant_introvert PASSED
+tests/tests_posttrain/test_model_after_training.py::test_inference_service_directional_introvert PASSED
+tests/tests_posttrain/test_model_after_training.py::test_model_score_test_non_decreasing PASSED
+
+============================= 26 passed in 1.34s ==============================

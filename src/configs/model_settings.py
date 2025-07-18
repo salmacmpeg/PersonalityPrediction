@@ -8,6 +8,7 @@ class ModelSettings(BaseSettings):
                                       extra='ignore')
     MODELS_FOLDER: DirectoryPath
     MODEL_NAME: str
+    HIGH_SCORE_FILE_NAME: str
 
 
 model_settings_obj = ModelSettings()

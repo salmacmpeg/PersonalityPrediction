@@ -17,8 +17,9 @@ def main():
     logger.debug(f'testing data: {test}')
     pred = mis.predict(pd.DataFrame(test))
 
-    logger.debug('Predicted personality is ' +
-                 f'is {"Introverted" if pred == 1 else "Extroverted"}')
+    # logger.debug('Predicted personality is ' +
+    #              f'is {"Introverted" if pred == 1 else "Extroverted"}')
+    logger.debug(f'Predicted personality is {mis._classes[pred[0]]}')
 
 
 if __name__ == '__main__':
