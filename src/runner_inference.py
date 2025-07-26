@@ -20,6 +20,7 @@ def main():
     # logger.debug('Predicted personality is ' +
     #              f'is {"Introverted" if pred == 1 else "Extroverted"}')
     logger.debug(f'Predicted personality is {mis._classes[pred[0]]}')
+    print(f'Predicted personality is {mis._classes[pred[0]]}')
 
 
 if __name__ == '__main__':
