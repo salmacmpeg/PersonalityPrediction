@@ -1490,3 +1490,66 @@
 2025-07-19T01:20:04.595111+0300 DEBUG Loaded highest score of : 0.8971074380165289
 2025-07-19T01:20:04.596381+0300 DEBUG Model DecisionTreeClassifier has been evaluated with test score: 0.8971074380165289
 2025-07-19T01:20:04.596439+0300 DEBUG inside save highest score, and the path is: D:\applying\personalityprediction\src\artifacts/score.txt 
+2025-07-26T16:10:43.855249+0300 INFO Loading data ...
+2025-07-26T16:10:43.947447+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:43.949920+0300 INFO Loading data ...
+2025-07-26T16:10:43.959879+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:43.961023+0300 INFO Loading data ...
+2025-07-26T16:10:43.970569+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.010269+0300 INFO Loading data ...
+2025-07-26T16:10:44.019673+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.033725+0300 INFO Loading data ...
+2025-07-26T16:10:44.045012+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.057744+0300 INFO Done preprocessing data
+2025-07-26T16:10:44.059338+0300 INFO Loading data ...
+2025-07-26T16:10:44.068930+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.081358+0300 INFO Done preprocessing data
+2025-07-26T16:10:44.081626+0300 DEBUG loaded data  with shapes: (18524, 8)
+2025-07-26T16:10:44.085853+0300 DEBUG after removing duplicates it became: (12098, 8)
+2025-07-26T16:10:44.087245+0300 DEBUG loaded data  with shapes: (12098, 8)
+2025-07-26T16:10:44.088837+0300 DEBUG after removing duplicates it became: (12098, 8)
+2025-07-26T16:10:44.089761+0300 INFO Loading data ...
+2025-07-26T16:10:44.099047+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.111904+0300 INFO Done preprocessing data
+2025-07-26T16:10:44.111998+0300 DEBUG loaded data  with shapes: (18524, 8)
+2025-07-26T16:10:44.114114+0300 DEBUG after removing duplicates it became: (12098, 8)
+2025-07-26T16:10:44.133729+0300 DEBUG Split data  with shapes: (9678, 7), (2420, 7)
+2025-07-26T16:10:44.156614+0300 DEBUG Model DecisionTreeClassifier has been trained with train score: 0.9869807811531308
+2025-07-26T16:10:44.173362+0300 DEBUG Model DecisionTreeClassifier has been trained with train score: 0.9869807811531308
+2025-07-26T16:10:44.174512+0300 DEBUG Model DecisionTreeClassifier has been evaluated with test score: 0.8971074380165289
+2025-07-26T16:10:44.174621+0300 DEBUG inside save highest score, and the path is: D:\applying\personalityprediction\src\artifacts/score.txt 
+2025-07-26T16:10:44.176645+0300 INFO Loading data ...
+2025-07-26T16:10:44.186427+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.199220+0300 INFO Done preprocessing data
+2025-07-26T16:10:44.199296+0300 DEBUG loaded data  with shapes: (18524, 8)
+2025-07-26T16:10:44.201339+0300 DEBUG after removing duplicates it became: (12098, 8)
+2025-07-26T16:10:44.203218+0300 DEBUG Split data  with shapes: (9678, 7), (2420, 7)
+2025-07-26T16:10:44.217550+0300 DEBUG Model DecisionTreeClassifier has been trained with train score: 0.9869807811531308
+2025-07-26T16:10:44.218713+0300 DEBUG Model DecisionTreeClassifier has been evaluated with test score: 0.8971074380165289
+2025-07-26T16:10:44.218773+0300 DEBUG inside save highest score, and the path is: D:\applying\personalityprediction\src\artifacts/score.txt 
+2025-07-26T16:10:44.219002+0300 INFO Built model with evaluation accuracy: 0.8971074380165289
+2025-07-26T16:10:44.219715+0300 INFO Saved model successfully
+2025-07-26T16:10:44.229045+0300 DEBUG inside save highest score, and the path is: C:\Users\PC\AppData\Local\Temp\pytest-of-PC\pytest-28\test_save_highest_model_score_0/test_score.txt 
+2025-07-26T16:10:44.231131+0300 DEBUG inside save highest score, and the path is: C:\Users\PC\AppData\Local\Temp\pytest-of-PC\pytest-28\test_save_highest_model_score_1/test_score.txt 
+2025-07-26T16:10:44.231541+0300 DEBUG inside save highest score, and the path is: C:\Users\PC\AppData\Local\Temp\pytest-of-PC\pytest-28\test_save_highest_model_score_1/test_score.txt 
+2025-07-26T16:10:44.233223+0300 DEBUG inside save highest score, and the path is: C:\Users\PC\AppData\Local\Temp\pytest-of-PC\pytest-28\test_save_highest_model_score_2/test_score.txt 
+2025-07-26T16:10:44.233541+0300 DEBUG inside save highest score, and the path is: C:\Users\PC\AppData\Local\Temp\pytest-of-PC\pytest-28\test_save_highest_model_score_2/test_score.txt 
+2025-07-26T16:10:44.241102+0300 INFO Loaded model successfully in model loader
+2025-07-26T16:10:44.242152+0300 DEBUG Loaded highest score of : 0.8971074380165289
+2025-07-26T16:10:44.243201+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:44.245052+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:44.246682+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:44.248468+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:44.249957+0300 INFO Loading data ...
+2025-07-26T16:10:44.259537+0300 INFO Loaded data with dimentions: (18524, 9)
+2025-07-26T16:10:44.272214+0300 INFO Done preprocessing data
+2025-07-26T16:10:44.272296+0300 DEBUG loaded data  with shapes: (18524, 8)
+2025-07-26T16:10:44.274306+0300 DEBUG after removing duplicates it became: (12098, 8)
+2025-07-26T16:10:44.276329+0300 DEBUG Split data  with shapes: (9678, 7), (2420, 7)
+2025-07-26T16:10:44.276652+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:44.276847+0300 DEBUG Loaded highest score of : 0.8971074380165289
+2025-07-26T16:10:44.278141+0300 DEBUG Model DecisionTreeClassifier has been evaluated with test score: 0.8971074380165289
+2025-07-26T16:10:44.278202+0300 DEBUG inside save highest score, and the path is: D:\applying\personalityprediction\src\artifacts/score.txt 
+2025-07-26T16:10:46.679192+0300 INFO Loaded model successfully in model inference
+2025-07-26T16:10:46.679350+0300 DEBUG testing data: {'Time_spent_Alone': [5], 'Stage_fear': [0], 'Social_event_attendance': [1], 'Going_outside': [3], 'Drained_after_socializing': [1], 'Friends_circle_size': [2], 'Post_frequency': [1]}
+2025-07-26T16:10:46.680624+0300 DEBUG Predicted personality is Introvert

@@ -1,0 +1,28 @@
+name: CI
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: git repo clone
+              uses: actions/checkout@v4
+
+            - name: setup python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: 3.12
+            
+            - name: install poetry
+              run: pip install poetry
+
+            - name: install poetry tomel dependencies 
+              run: make install
+
+            - name: run builder
+              run: make runner_inference
