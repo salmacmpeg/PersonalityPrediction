@@ -1,0 +1,28 @@
+#we can add time testing for inference and train in the future
+'''def test_dt_training_time(dummy_titanic):
+    X_train, y_train, X_test, y_test = dummy_titanic
+
+    # Standardize to use depth = 10
+    dt = DecisionTree(depth_limit=10)
+    latency_array = np.array([train_with_time(dt, X_train, y_train)[1] for i in range(100)])
+    time_p95 = np.quantile(latency_array, 0.95)
+    assert time_p95 < 1.0, 'Training time at 95th percentile should be < 1.0 sec'
+
+
+def test_dt_serving_latency(dummy_titanic):
+    X_train, y_train, X_test, y_test = dummy_titanic
+
+    # Standardize to use depth = 10
+    dt = DecisionTree(depth_limit=10)
+    dt.fit(X_train, y_train)
+
+    latency_array = np.array([predict_with_time(dt, X_test)[1] for i in range(500)])
+    latency_p99 = np.quantile(latency_array, 0.99)
+    assert latency_p99 < 0.004, 'Serving latency at 99th percentile should be < 0.004 sec'
+    '''
+sources:
+https://applyingml.com/resources/testing-ml/
+https://madewithml.com/courses/mlops/testing/
+https://medium.com/marvelous-mlops/how-to-test-ml-code-f9483829c72a
+https://www.analyticsvidhya.com/blog/2022/01/writing-test-cases-for-machine-learning/
+expect_column_values_to_be

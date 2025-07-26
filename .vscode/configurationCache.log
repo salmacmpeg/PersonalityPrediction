@@ -1,1 +1,1 @@
-{"buildTargets":[".PHONY","check","clean","install","run_builder","run_inference","runner_builder","runner_inference"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":[".PHONY","check","clean","install","run_builder","run_inference","runner_builder","runner_inference","test_all","test_posttrain","test_pretrain","test_training"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
