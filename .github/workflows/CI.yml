@@ -25,4 +25,7 @@ jobs:
               run: make install
 
             - name: run builder
+              run: make runner_builder
+            
+            - name: run inference
               run: make runner_inference
