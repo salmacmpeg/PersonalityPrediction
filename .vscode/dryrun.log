@@ -1,9 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory 'd:/applying/personalityprediction'
-poetry install
-poetry run flake8
-poetry run pytest -v -s --html=src/logs/pytest_report.html
-poetry run python src/runner_inference.py
-rm -rf `find . -type d -name  __pycache__`
-make: Leaving directory 'd:/applying/personalityprediction'
- 
